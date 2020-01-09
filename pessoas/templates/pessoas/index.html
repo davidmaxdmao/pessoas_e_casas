@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pessoas</title>
+</head>
+<body>
+<a href="{% url 'pessoa_cadastro' %}"><button>cadastrar</button></a>
+<hr>
+<br>
+{% for pessoa in object_list %}
+    <h3>
+        <label>nome: </label>
+        {{ pessoa.nome }}
+    </h3>
+    <hr>
+    <a href="{% url 'pessoa_alterar' pessoa.pk %}"><button>alterar</button></a>
+<a href="{% url 'pessoa_deletar' pessoa.pk %}"><button>deletar</button></a>
+{% endfor %}
+
+
+</body>
+</html>
