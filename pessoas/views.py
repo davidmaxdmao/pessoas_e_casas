@@ -13,6 +13,7 @@ class ListarPessoasView(ListView):
     model = Pessoa
     form_class = PessoaForm
     template_name = 'pessoas/index.html'
+    queryset = Pessoa.objects.all().order_by('nome')
 
 
 class CadastrarPessoaView(CreateView):

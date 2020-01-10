@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for casa in object_list %}
+        <h2>
+        <label>valor: </label>
+        {{ casa.valor }}
+        </h2>
+        <h2>
+        <label>endereco: </label>
+        {{ casa.endereco }}
+        </h2>
+        <h2>
+        <label>donos: </label>
+            {% for dono in casa.dono.all %}
+
+            {{ dono }},
+            {% endfor %}
+
+
+        </h2>
+    <hr>
+    <br>
+
+    {% endfor %}
+
+    
+  </body>
+</html>
