@@ -15,4 +15,29 @@ class ListarCasasView(ListView):
     form_class = CasaForm
 
 
+class CadastrarCasaView(CreateView):
+    model = Casa
+    template_name = 'casas/cadastro.html'
+    form_class = CasaForm
+    success_url = reverse_lazy('listar_casa')
+
+
+class AlterarCasaView(UpdateView):
+    model = Casa
+    template_name = 'casas/cadastro.html'
+    form_class = CasaForm
+    success_url = reverse_lazy('listar_casa')
+
+
+class DeletarCasaView(DeleteView):
+    model = Casa
+    template_name = 'casas/deletar.html'
+    success_url = reverse_lazy('listar_casa')
+
+
+
+
+
+
+
 

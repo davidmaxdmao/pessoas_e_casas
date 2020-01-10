@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
+
+  <a href="{% url 'cadastrar_casa' %}"><button>Cadastrar</button></a>
+  <br>
     {% for casa in object_list %}
         <h2>
         <label>valor: </label>
@@ -20,7 +23,9 @@
 
             {{ dono }},
             {% endfor %}
-
+            <br>
+            <a href="{% url 'alterar_casa' casa.pk%}"><button>Alterar</button></a>
+            <a href="{% url 'deletar_casa' casa.pk%}"><button>Deletar</button></a>
 
         </h2>
     <hr>
