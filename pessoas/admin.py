@@ -1,5 +1,10 @@
 from django.contrib import admin
-from .models import Pessoa
-# Register your models here.
 
-admin.site.register(Pessoa)
+from .models import Pessoa
+
+
+class PessoaAdmin(admin.ModelAdmin):
+    list_display = ('nome',)
+
+
+admin.site.register(Pessoa, PessoaAdmin)

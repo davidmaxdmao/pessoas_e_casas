@@ -1,4 +1,11 @@
 from django.contrib import admin
+
 from .models import Casa
-# Register your models here.
-admin.site.register(Casa)
+
+
+class CasaAdmin(admin.ModelAdmin):
+    list_display = ('valor', 'endereco', 'donos')
+
+
+
+admin.site.register(Casa, CasaAdmin)
